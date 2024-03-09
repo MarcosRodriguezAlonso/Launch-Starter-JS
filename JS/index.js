@@ -7,7 +7,6 @@ const nameCheck = name.length >= 5;
 const passwordCheck =
   /.{8,}/.test(password) &&
   /(?:[A-Z])/.test(password) &&
-  /(?:[a-z])/.test(password) &&
   /(?:\d)/.test(password);
 const passwordMatchCheck = password === passwordConfirmation;
 const ageCheck = age >= 18;
