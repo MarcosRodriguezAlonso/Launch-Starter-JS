@@ -1,20 +1,20 @@
 const name = "Pep";
-const password = "CalleFalsa123";
-const passwordConfirmation = "CalleFalsa123";
+const password = "Cáñamo123";
+const passwordConfirmation = "Cáñamo123";
 const age = 17;
 
-const nameCheck = name.length >= 5;
-const passwordCheck =
-  /.{8,}/.test(password) &&
-  /(?:[A-Z])/.test(password) &&
-  /(?:\d)/.test(password);
-const passwordMatchCheck = password === passwordConfirmation;
-const ageCheck = age >= 18;
+const hasNameRequiredLength = name.length >= 5;
+const hasPasswordRequirements =
+  password.length >= 8 &&
+  /([A-Z])/.test(password) &&
+  /(\d)/.test(password) &&
+  /([a-zA-Z0-9\sÁÉÍÓÚáéíóúÑñ])/.test(password);
+const IsBothPasswordsEqual = password === passwordConfirmation;
+const IsAdult = age >= 18;
 
-console.log(`El nombre de usuario es válido : ${nameCheck}`);
-
-console.log(`La contraseña es válida: ${passwordCheck}`);
-
-console.log(`La repetición de contraseña es válida: ${passwordMatchCheck}`);
-
-console.log(`Es mayor de edad: ${ageCheck}`);
+console.log(`
+El nombre de usuario es válido : ${hasNameRequiredLength}
+La contraseña es válida: ${hasPasswordRequirements}
+La repetición de contraseña es válida: ${IsBothPasswordsEqual}
+Es mayor de edad: ${IsAdult}
+`);
